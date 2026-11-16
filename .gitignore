@@ -1,0 +1,8 @@
+refresh.log
+.env
+*.env
+__pycache__/
+*.pyc
+stale-test.html
+dashboard.html
+dashboard.pw
