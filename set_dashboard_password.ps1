@@ -1,4 +1,4 @@
-# ตั้งรหัสผ่านสำหรับเข้ารหัส Dashboard บน GitHub Pages
+﻿# ตั้งรหัสผ่านสำหรับเข้ารหัส Dashboard บน GitHub Pages
 # รหัสถูกเก็บเป็นไฟล์ dashboard.pw ที่เข้ารหัสด้วยบัญชี Windows ของคุณ (DPAPI) เปิดอ่านได้เฉพาะบัญชีนี้บนเครื่องนี้
 # ไฟล์นี้ไม่ถูก push ขึ้น GitHub (อยู่ใน .gitignore) และรหัสไม่ปรากฏบนหน้าจอ
 $here = Split-Path -Parent $MyInvocation.MyCommand.Path
