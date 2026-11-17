@@ -74,7 +74,12 @@ def main():
                 conts[c] = {"c": c, "t": r.get("HCTYPE") or "", "pt": "", "fd": "", "m1": "", "m2": "", "m3": "", "da": None, "ta": None}
             elif c and not conts[c]["t"]:
                 conts[c]["t"] = r.get("HCTYPE") or ""
-        bls[bl] = {"do": d(hdr.get("HHDODT")), "eta": d(hdr.get("HHETA")), "ata": d(hdr.get("HHAAD")), "k": list(conts.values())}
+        one = lambda v: " ".join(str(v or "").split())  # ตัดบรรทัดใหม่/ช่องว่างซ้ำ
+        bls[bl] = {"do": d(hdr.get("HHDODT")), "eta": d(hdr.get("HHETA")), "ata": d(hdr.get("HHAAD")),
+                   "cnee": one(hdr.get("HHC1")), "vn": one(hdr.get("HHVSLNM")), "vc": one(hdr.get("HHVSLCD")),
+                   "vy": one(hdr.get("HHVYG")), "pol": one(hdr.get("HHLODCD")), "poln": one(hdr.get("HHLODNM")),
+                   "pod": one(hdr.get("HHDISCCD")), "podn": one(hdr.get("HHDISCNM")),
+                   "k": list(conts.values())}
         if i % 50 == 0:
             print(f"bl info {i}/{len(all_bl)}", flush=True)
     if failed:
